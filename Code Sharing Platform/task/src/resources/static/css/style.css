@@ -1,0 +1,18 @@
+#code_snippet {
+    border: 2px solid green;
+    width: 40vw;
+    height: max-content;
+    margin-bottom: 1.5rem;
+}
+
+#load_date {
+    color: green;
+}
+
+#views_restriction {
+    border-bottom: 1px solid black;
+}
+
+#time_restriction {
+    border-bottom: 1px solid black;
+}

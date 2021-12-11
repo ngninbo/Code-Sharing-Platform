@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="17">
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task-build-classes-java.main" target="11" />
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task-build-generated-sources-annotationProcessor-java.main" target="11" />
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task-build-generated-sources-headers-java.main" target="11" />
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task-build-reports-tests.main" target="11" />
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task-build-test-results.main" target="11" />
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task-build-tmp.main" target="11" />
+      <module name="Code_Sharing_Platform.Code_Sharing_Platform-task.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items-build-classes-java.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items-build-generated-sources-annotationProcessor-java.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items-build-generated-sources-headers-java.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items-build-reports-tests.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items-build-test-results.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items-build-tmp.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Deleting_items.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Return_query_parameter.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Storing_user_names.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Theory.main" target="11" />
+      <module name="Code_Sharing_Platform.Topics-Posting_and_deleting_data_via_REST-Web_calculator.main" target="11" />
+      <module name="Code_Sharing_Platform.util.main" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

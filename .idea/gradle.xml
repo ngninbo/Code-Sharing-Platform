@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task/build/classes/java" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task/build/test-results" />
+            <option value="$PROJECT_DIR$/Code Sharing Platform/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items/build/classes/java" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items/build/test-results" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Deleting items/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Return query parameter" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Storing user names" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Posting and deleting data via REST/Web calculator" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
