@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 import platform.dto.SnippetDto;
-import platform.mapper.SnippetMapper;
 import platform.model.Snippet;
 import platform.service.SnippetService;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+/**
+ * This class implement a controller for updating models in views
+ * @author Beauclair Dongmo Ngnintedem
+ */
 @Controller
 public class SnippetController {
 

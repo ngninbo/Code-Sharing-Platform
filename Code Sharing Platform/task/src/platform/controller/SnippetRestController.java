@@ -9,20 +9,22 @@ import platform.dto.SnippetDto;
 import platform.mapper.SnippetMapper;
 import platform.model.Snippet;
 import platform.service.SnippetService;
-
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * This class provides endpoints for requests of snippet via REST API
+ * @author Beauclair Dongmo Ngnintedem
+ */
 @RestController
 public class SnippetRestController {
 
     private final SnippetService snippetService;
     private final SnippetMapper snippetMapper;
 
-    public SnippetRestController(@Autowired SnippetService snippetService, SnippetMapper snippetMapper) {
+    @Autowired
+    public SnippetRestController(SnippetService snippetService, SnippetMapper snippetMapper) {
         this.snippetService = snippetService;
         this.snippetMapper = snippetMapper;
     }

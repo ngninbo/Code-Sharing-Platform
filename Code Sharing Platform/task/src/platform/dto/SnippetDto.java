@@ -4,6 +4,9 @@ import platform.model.Snippet;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * DTO class of Snippet
+ */
 public class SnippetDto {
 
     private static final String DATE_FORMATTER= "yyyy-MM-dd HH:mm:ss";
@@ -53,7 +56,7 @@ public class SnippetDto {
         return time;
     }
 
-    public synchronized void setTime(Long time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 
@@ -61,7 +64,7 @@ public class SnippetDto {
         return views;
     }
 
-    public synchronized void setViews(Long views) {
+    public void setViews(Long views) {
         this.views = views;
     }
 }

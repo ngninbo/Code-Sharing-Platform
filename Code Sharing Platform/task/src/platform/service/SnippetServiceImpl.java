@@ -15,8 +15,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * This class implements the snippet service.
+ * @author Beauclair Dongmo Ngnintedem
+ * @see SnippetService
+ */
 @Service
-public class SnippetServiceImpl implements SnippetService{
+public class SnippetServiceImpl implements SnippetService {
 
     private final SnippetMapper snippetMapper;
     private final SnippetRepository snippetRepository;
@@ -54,21 +59,18 @@ public class SnippetServiceImpl implements SnippetService{
         if (opt.isPresent()) {
             Snippet snippet = opt.get();
 
-            if (snippet.getViews() >= 0 && snippet.getTime() >= 0) {
+            remainingTime = snippet.getTime() - ChronoUnit.SECONDS.between(snippet.getDate(), LocalDateTime.now());
+            snippet.updateTime(remainingTime <= 0 ? 0 : remainingTime);
 
-                remainingTime = snippet.getTime() - ChronoUnit.SECONDS.between(snippet.getDate(), LocalDateTime.now());
-                snippet.updateTime(remainingTime <= 0 ? 0 : remainingTime);
-
-                if (snippet.isSecret() && snippet.getTime() == 0 && snippet.getViews() == 0) {
-                    return Optional.empty();
-                }
-
-                snippet.decrementViews();
-
-                this.saveSnippet(snippet);
-
-                return Optional.of(snippet);
+            if (snippet.isSecret() && snippet.getTime() == 0 && snippet.getViews() == 0) {
+                return Optional.empty();
             }
+
+            snippet.decrementViews();
+
+            this.saveSnippet(snippet);
+
+            return Optional.of(snippet);
         }
 
         return Optional.empty();
@@ -76,36 +78,7 @@ public class SnippetServiceImpl implements SnippetService{
 
     @Override
     @Transactional
-    public Optional<Snippet> findSecretSnippetById(String uuid) {
-        return snippetRepository.findSecretSnippetById(uuid);
-    }
-
-    @Override
-    @Transactional
-    public synchronized void decrementViews(String id) {
-        this.snippetRepository.decrementViews(id);
-    }
-
-    @Override
-    @Transactional
-    public void updateTime(long time, String id) {
-        this.snippetRepository.updateTime(time <= 0 ? 0 : time, id);
-    }
-
-    @Override
-    @Transactional
-    public void deleteById(String uuid) {
-        this.snippetRepository.deleteById(uuid);
-    }
-
-    @Override
-    @Transactional
     public void saveSnippet(Snippet snippet) {
         this.snippetRepository.save(snippet);
-    }
-
-    @Override
-    public Optional<Snippet> findByIdIgnoreRestrictions(String uuid) {
-        return snippetRepository.findById(uuid);
     }
 }

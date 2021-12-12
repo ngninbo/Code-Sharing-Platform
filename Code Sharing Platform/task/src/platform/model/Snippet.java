@@ -11,6 +11,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
+/**
+ * JPA Entity storing all information about code snippet
+ * @author Beauclair Dongmo Ngnintedem
+ */
 @Entity
 public class Snippet {
 
