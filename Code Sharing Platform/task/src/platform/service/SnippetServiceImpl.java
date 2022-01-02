@@ -56,7 +56,9 @@ public class SnippetServiceImpl implements SnippetService {
         Optional<Snippet> opt = snippetRepository.findById(id);
 
         long remainingTime;
-        if (opt.isPresent()) {
+        if (opt.isEmpty()) {
+            return Optional.empty();
+        } else {
             Snippet snippet = opt.get();
 
             remainingTime = snippet.getTime() - ChronoUnit.SECONDS.between(snippet.getDate(), LocalDateTime.now());
@@ -72,8 +74,6 @@ public class SnippetServiceImpl implements SnippetService {
 
             return Optional.of(snippet);
         }
-
-        return Optional.empty();
     }
 
     @Override
