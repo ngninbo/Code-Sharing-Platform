@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import platform.dto.SnippetDto;
+import platform.utils.CodeSnippetDateFormatter;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 /**
@@ -17,8 +17,6 @@ import java.util.UUID;
  */
 @Entity
 public class Snippet {
-
-    private static final String DATE_FORMATTER= "yyyy-MM-dd HH:mm:ss";
 
     @Id
     private String id = UUID.randomUUID().toString();
@@ -58,7 +56,7 @@ public class Snippet {
         this(dto.getCode(), dto.getTime(), dto.getViews());
         this.timeRestricted = dto.getTime() > 0;
         this.viewRestricted = dto.getViews() > 0;
-        this.secret = dto.getTime() > 0 || dto.getViews() > 0;
+        this.secret = this.isTimeRestricted() || this.isViewRestricted();
     }
 
     public String getId() {
@@ -137,7 +135,6 @@ public class Snippet {
     }
 
     public String formatDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMATTER);
-        return formatter.format(date);
+        return CodeSnippetDateFormatter.formatDate(date);
     }
 }

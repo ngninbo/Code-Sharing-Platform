@@ -3,6 +3,7 @@ package platform.mapper;
 import org.springframework.stereotype.Component;
 import platform.dto.SnippetDto;
 import platform.model.Snippet;
+import platform.utils.SnippetDtoFromSnippet;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 public class SnippetMapper {
 
     public SnippetDto snippetToSnippetDto(Snippet snippet) {
-        return new SnippetDto(snippet);
+        return new SnippetDtoFromSnippet(snippet);
     }
 
     /**
@@ -37,7 +38,7 @@ public class SnippetMapper {
         List<SnippetDto> list = new LinkedList<>();
 
         if (snippets != null) {
-            snippets.forEach(snippet -> list.add(new SnippetDto(snippet)));
+            snippets.forEach(snippet -> list.add(new SnippetDtoFromSnippet(snippet)));
             return list;
         }
         else {

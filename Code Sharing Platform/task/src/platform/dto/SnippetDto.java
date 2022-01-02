@@ -1,15 +1,14 @@
 package platform.dto;
 
 import platform.model.Snippet;
+import platform.utils.CodeSnippetDateFormatter;
+
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * DTO class of Snippet
  */
 public class SnippetDto {
-
-    private static final String DATE_FORMATTER= "yyyy-MM-dd HH:mm:ss";
 
     private String code;
     private String date;
@@ -22,18 +21,13 @@ public class SnippetDto {
     public SnippetDto(String code, LocalDateTime date) {
         this();
         this.code = code;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMATTER);
-        this.date = formatter.format(date);
+        this.date = CodeSnippetDateFormatter.formatDate(date);
     }
 
     public SnippetDto(String code, LocalDateTime date, Long time, Long views) {
         this(code, date);
         this.time = time;
         this.views = views;
-    }
-
-    public SnippetDto(Snippet snippet) {
-        this(snippet.getCode(), snippet.getDate(), snippet.getTime(), snippet.getViews());
     }
 
     public String getCode() {
