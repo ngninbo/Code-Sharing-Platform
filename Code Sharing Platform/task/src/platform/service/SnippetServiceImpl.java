@@ -11,6 +11,7 @@ import platform.persistence.SnippetRepository;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -45,8 +46,7 @@ public class SnippetServiceImpl implements SnippetService {
 
         Snippet snippet = snippetMapper.snippetDtoToSnippet(snippetDto);
         snippet = snippetRepository.save(snippet);
-
-        return Map.of("id", snippet.getId());
+        return Collections.singletonMap("id", snippet.getId());
     }
 
     @Override
@@ -54,8 +54,8 @@ public class SnippetServiceImpl implements SnippetService {
     public Optional<Snippet> findById(String id) {
 
         Optional<Snippet> opt = snippetRepository.findById(id);
-
         long remainingTime;
+
         if (opt.isEmpty()) {
             return Optional.empty();
         } else {

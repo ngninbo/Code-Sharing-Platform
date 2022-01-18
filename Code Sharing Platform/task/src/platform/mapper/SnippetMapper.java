@@ -5,9 +5,8 @@ import platform.dto.SnippetDto;
 import platform.model.Snippet;
 import platform.utils.SnippetDtoFromSnippet;
 
-import java.util.LinkedList;
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 /**
  * This class can be used for conversion between Snippet and SnippetDto and vice versa
@@ -35,14 +34,6 @@ public class SnippetMapper {
      * @return List of Snippet DTO
      */
     public List<SnippetDto> snippetsToListSnippetDto(List<Snippet> snippets) {
-        List<SnippetDto> list = new LinkedList<>();
-
-        if (snippets != null) {
-            snippets.forEach(snippet -> list.add(new SnippetDtoFromSnippet(snippet)));
-            return list;
-        }
-        else {
-            return List.of();
-        }
+        return snippets.stream().map(SnippetDtoFromSnippet::new).collect(Collectors.toList());
     }
 }

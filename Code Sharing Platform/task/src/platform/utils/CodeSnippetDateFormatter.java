@@ -9,6 +9,11 @@ public class CodeSnippetDateFormatter {
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(DATE_FORMAT);
 
+    /**
+     * Convert LocalDatetime to yyyy-MM-dd HH:mm:ss format
+     * @param date LocalDateTime
+     * @return Formatted datetime in String format
+     */
     public static String formatDate(LocalDateTime date) {
         return FORMATTER.format(date);
     }

@@ -24,6 +24,7 @@ import java.util.NoSuchElementException;
 public class SnippetController {
 
     private final SnippetService snippetService;
+
     @Autowired
     public SnippetController(SnippetService snippetService) {
         this.snippetService = snippetService;
@@ -31,11 +32,8 @@ public class SnippetController {
 
     @GetMapping("/code/{uuid}")
     public String getSnippet(@PathVariable String uuid, Model model) {
-
         Snippet snippet = this.snippetService.findById(uuid).orElseThrow();
-
         model.addAttribute("snippet", snippet);
-
         return "snippetView";
     }
 

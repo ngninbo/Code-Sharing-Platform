@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/405256/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Sun, 02 Jan 2022 17:22:42 UTC
+update_date: Tue, 18 Jan 2022 15:57:35 UTC
 stages:
 - id: 692
   step: 11027
@@ -287,6 +287,12 @@ topics:
     theory_id: 3570
   - title: Exception handling
     theory_id: 3552
+  - title: 'Hashing: overview'
+    theory_id: 9831
+  - title: Hash function
+    theory_id: 10878
+  - title: Hash table
+    theory_id: 13054
   - title: LocalDate
     theory_id: 3592
   - title: LocalTime
@@ -305,6 +311,10 @@ topics:
     theory_id: 3610
   - title: Thread synchronization
     theory_id: 3557
+  - title: The Set interface
+    theory_id: 3575
+  - title: The Map interface
+    theory_id: 3558
   - title: Collections and thread-safety
     theory_id: 4984
   - title: Thread-safe maps
@@ -340,7 +350,7 @@ topics:
   - title: Introduction to JPA
     theory_id: 17125
   - title: JPA relationships
-    theory_id: 8936
+    theory_id: 17787
   - title: '@Bean vs @Component'
     theory_id: 14771
   - title: CRUD repositories
