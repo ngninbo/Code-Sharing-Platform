@@ -3,7 +3,6 @@ package platform.mapper;
 import org.springframework.stereotype.Component;
 import platform.dto.SnippetDto;
 import platform.model.Snippet;
-import platform.utils.SnippetDtoFromSnippet;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,8 +14,8 @@ import java.util.stream.Collectors;
 @Component
 public class SnippetMapper {
 
-    public SnippetDto snippetToSnippetDto(Snippet snippet) {
-        return new SnippetDtoFromSnippet(snippet);
+    public SnippetDto mapToSnippetDto(Snippet snippet) {
+        return new SnippetDto(snippet.getCode(), snippet.getDate(), snippet.getTime(), snippet.getViews());
     }
 
     /**
@@ -24,8 +23,8 @@ public class SnippetMapper {
      * @param snippetDto Snippet DTO
      * @return Snippet
      */
-    public Snippet snippetDtoToSnippet(SnippetDto snippetDto) {
-        return new Snippet(snippetDto);
+    public Snippet mapToSnippet(SnippetDto snippetDto) {
+        return new Snippet(snippetDto.getCode(), snippetDto.getTime(), snippetDto.getViews());
     }
 
     /**
@@ -33,7 +32,9 @@ public class SnippetMapper {
      * @param snippets List of Snippet
      * @return List of Snippet DTO
      */
-    public List<SnippetDto> snippetsToListSnippetDto(List<Snippet> snippets) {
-        return snippets.stream().map(SnippetDtoFromSnippet::new).collect(Collectors.toList());
+    public List<SnippetDto> mapToListOfSnippetDto(List<Snippet> snippets) {
+        return snippets.stream()
+                .map(this::mapToSnippetDto)
+                .collect(Collectors.toList());
     }
 }

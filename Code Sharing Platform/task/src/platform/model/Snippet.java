@@ -3,7 +3,6 @@ package platform.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
-import platform.dto.SnippetDto;
 import platform.utils.CodeSnippetDateFormatter;
 
 import javax.persistence.*;
@@ -16,6 +15,7 @@ import java.util.UUID;
  * @author Beauclair Dongmo Ngnintedem
  */
 @Entity
+@SuppressWarnings({"unused"})
 public class Snippet {
 
     @Id
@@ -50,12 +50,8 @@ public class Snippet {
         this.date = LocalDateTime.now();
         this.time = time;
         this.views = views;
-    }
-
-    public Snippet(SnippetDto dto) {
-        this(dto.getCode(), dto.getTime(), dto.getViews());
-        this.timeRestricted = dto.getTime() > 0;
-        this.viewRestricted = dto.getViews() > 0;
+        this.timeRestricted = this.getTime() > 0;
+        this.viewRestricted = this.getViews() > 0;
         this.secret = this.isTimeRestricted() || this.isViewRestricted();
     }
 

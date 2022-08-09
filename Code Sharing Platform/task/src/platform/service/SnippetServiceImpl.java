@@ -22,6 +22,7 @@ import java.util.Optional;
  * @see SnippetService
  */
 @Service
+@SuppressWarnings({"unused"})
 public class SnippetServiceImpl implements SnippetService {
 
     private final SnippetMapper snippetMapper;
@@ -36,15 +37,14 @@ public class SnippetServiceImpl implements SnippetService {
     @Override
     @Transactional
     public List<SnippetDto> findLatest() {
-        List<Snippet> list = snippetRepository.findAllWithoutAnyRestrictionOrderByDateDescLimitTen();
-        return snippetMapper.snippetsToListSnippetDto(list);
+        return snippetMapper.mapToListOfSnippetDto(snippetRepository.findAllWithoutAnyRestrictionOrderByDateDescLimitTen());
     }
 
     @Override
     @Transactional
     public Map<String, String> saveCodeSnippetDto(SnippetDto snippetDto) {
 
-        Snippet snippet = snippetMapper.snippetDtoToSnippet(snippetDto);
+        Snippet snippet = snippetMapper.mapToSnippet(snippetDto);
         snippet = snippetRepository.save(snippet);
         return Collections.singletonMap("id", snippet.getId());
     }

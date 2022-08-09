@@ -1,6 +1,5 @@
 package platform.dto;
 
-import platform.model.Snippet;
 import platform.utils.CodeSnippetDateFormatter;
 
 import java.time.LocalDateTime;
@@ -8,6 +7,7 @@ import java.time.LocalDateTime;
 /**
  * DTO class of Snippet
  */
+@SuppressWarnings({"unused"})
 public class SnippetDto {
 
     private String code;
